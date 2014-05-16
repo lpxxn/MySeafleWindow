@@ -55,21 +55,24 @@ BodyView::BodyView(QWidget *parent) :
 
       QList<ItemObject*> values;
       GetData(values);
-      ItemModel * data =new ItemModel(Q_NULLPTR);
+      data =new ItemModel(Q_NULLPTR);
       data->setHeaderTitle(title);
       data->BindingData(values);
       QItemSelectionModel *selections = new QItemSelectionModel(data);
 
-      QTableView *table = new QTableView;
+      table = new QTableView;
       table->setModel(data);
       table->setSelectionModel(selections);
+      table->setSelectionBehavior(QAbstractItemView::SelectRows);
       table->horizontalHeader()->setSectionsMovable(true);
-      table->verticalHeader()->setSectionsMovable(true);
+      //table->verticalHeader()->setSectionsMovable(true);
+      table->verticalHeader()->hide();
+
       // Set StaticContents to enable minimal repaints on resizes.
       table->viewport()->setAttribute(Qt::WA_StaticContents);
       page->addWidget(table);
-
-      QListView *list = new QListView;
+      table->setVisible(false);
+      list = new QListView;
       //QObject::connect(list,SIGNAL(doubleClicked(QModelIndex),this,SLOT(doubleClicked(QModelIndex))));
       list->setModel(data);
       list->setIconSize(QSize(80,80));

@@ -1,4 +1,4 @@
-#include "itemmodel.h"
+﻿#include "itemmodel.h"
 #include<QFileIconProvider>
 ItemModel::ItemModel(QObject *parent) :
     QAbstractItemModel(parent)

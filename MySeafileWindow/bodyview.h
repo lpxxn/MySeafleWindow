@@ -2,7 +2,10 @@
 #define BODYVIEW_H
 
 #include <QWidget>
+#include<QTableView>
+#include<QListView>
 #include "itemobject.h"
+#include "itemmodel.h"
 namespace Ui {
 class BodyView;
 }
@@ -17,6 +20,9 @@ public:
     void GetData(QList<ItemObject* > &data);
 private:
     Ui::BodyView *ui;
+    ItemModel * data;
+    QTableView *table;
+    QListView *list;
 };
 
 #endif // BODYVIEW_H
