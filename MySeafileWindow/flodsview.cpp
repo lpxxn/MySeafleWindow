@@ -18,6 +18,7 @@ FlodsView::FlodsView(QWidget *parent) :
     vbLayout->addWidget( LineEditDir );
     vbLayout->addWidget( ListWidgetFile );
 
+
     connect(LineEditDir,SIGNAL(returnPressed ()),this,SLOT(slotShow()));
     connect(ListWidgetFile,SIGNAL(itemDoubleClicked(QListWidgetItem * )),this,SLOT(slotShowDir(QListWidgetItem *)));
 
