@@ -22,7 +22,8 @@ SOURCES += main.cpp\
     flodsview.cpp \
     itemmodel.cpp \
     itemobject.cpp \
-    mylistitemdelegege.cpp
+    mylistitemdelegege.cpp \
+    mylineitemdelegate.cpp
 
 HEADERS  += mainwindow.h \
     headerview.h \
@@ -32,7 +33,8 @@ HEADERS  += mainwindow.h \
     flodsview.h \
     itemmodel.h \
     itemobject.h \
-    mylistitemdelegege.h
+    mylistitemdelegege.h \
+    mylineitemdelegate.h
 
 FORMS    += mainwindow.ui \
     headerview.ui \

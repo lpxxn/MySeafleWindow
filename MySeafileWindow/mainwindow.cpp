@@ -45,7 +45,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
      //setWindowFlags (Qt::CustomizeWindowHint);
      //setWindowFlags (Qt::FramelessWindowHint);
-
+    connect(ui->btn_swishView,SIGNAL(clicked()),ui->wdg_BodyFolders,SLOT(SwitchView()));
 }
 
 MainWindow::~MainWindow()

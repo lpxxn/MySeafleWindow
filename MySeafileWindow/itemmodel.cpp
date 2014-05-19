@@ -72,11 +72,16 @@ QVariant ItemModel::data(const QModelIndex &index, int role) const
     if(role==Qt::DecorationRole&&index.column()==0)
     {
         return item->getMyIcon();
-//        QFileIconProvider iconProvider;
-//        return iconProvider.icon(QFileIconProvider::File);
+        //        QFileIconProvider iconProvider;
+        //        return iconProvider.icon(QFileIconProvider::File);
     }
 
 
+//    if(role==Qt::CheckStateRole&&index.column()==0)
+//    {
+//        //if (item->readed()) //这里由于QCheckBox是三态的，不应该简单的返回true,false
+//        return Qt::Checked;
+//    }
     // 显示节点数据值
     if(role==Qt::DisplayRole)
     {
@@ -89,7 +94,6 @@ QVariant ItemModel::data(const QModelIndex &index, int role) const
             return item->getDesc();
         }
     }
-
     return QVariant();
 }
 
@@ -97,9 +101,16 @@ bool ItemModel::setData(const QModelIndex &index, const QVariant &value, int rol
 {
     if (index.isValid() && role == Qt::EditRole) {
         ItemObject *item=static_cast<ItemObject*>(index.internalPointer());
-        item->setName(value.toString());
-        emit dataChanged(index, index);
-        return true;
+        if(value.toString().length()>0)
+        {
+            item->setName(value.toString());
+            emit dataChanged(index, index);
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
     return false;
 }
@@ -131,7 +142,6 @@ void ItemModel::setHeaderTitle(const QList<QVariant> &value)
 
 void ItemModel::BindingData(QList<ItemObject *> data)
 {
-
     if(rootItem==Q_NULLPTR)
     {
         delete rootItem;
