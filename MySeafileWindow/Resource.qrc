@@ -2,5 +2,12 @@
     <qresource prefix="/image">
         <file>account.png</file>
         <file>folder.png</file>
+        <file>header.png</file>
+        <file>Menu.png</file>
+        <file>menuBack.png</file>
+        <file>upload.png</file>
+        <file>uploadHover.png</file>
+        <file>close.png</file>
+        <file>closehover.png</file>
     </qresource>
 </RCC>

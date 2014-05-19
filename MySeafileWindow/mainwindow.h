@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include<QMouseEvent>
 class QMenu;
 namespace Ui {
 class MainWindow;
@@ -28,10 +29,14 @@ private slots:
 
     void on_pbtn_E_clicked();
 
+    void MouseLeftPress(QMouseEvent*);
+    void MouseleftpressAfterMove(QMouseEvent*);
+    void MousedoubleClickMaxWindow(QMouseEvent *);
 private:
     Ui::MainWindow *ui;
     QMenu *account_menu_;
     bool isVisible;
+    QPoint dragPosition;
 };
 
 #endif // MAINWINDOW_H

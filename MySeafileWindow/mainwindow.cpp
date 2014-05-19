@@ -43,9 +43,12 @@ MainWindow::MainWindow(QWidget *parent) :
 //     pal.setColor(QPalette::Window, backColor);
 //     ui->wdg_menu->setPalette(pal);
 
-     //setWindowFlags (Qt::CustomizeWindowHint);
-     //setWindowFlags (Qt::FramelessWindowHint);
+     setWindowFlags (Qt::CustomizeWindowHint);
+     setWindowFlags (Qt::FramelessWindowHint);
     connect(ui->btn_swishView,SIGNAL(clicked()),ui->wdg_BodyFolders,SLOT(SwitchView()));
+    connect(ui->wdg_header,SIGNAL(mouseLeftPress(QMouseEvent*)),SLOT(MouseLeftPress(QMouseEvent *)));
+    connect(ui->wdg_header,SIGNAL(mouseleftpressAfterMove(QMouseEvent*)),SLOT(MouseleftpressAfterMove(QMouseEvent *)));
+    connect(ui->wdg_header,SIGNAL(mousedoubleClickMaxWindow(QMouseEvent*)),SLOT(MousedoubleClickMaxWindow(QMouseEvent *)));
 }
 
 MainWindow::~MainWindow()
@@ -78,13 +81,35 @@ void MainWindow::on_pushButton_clicked()
 
 void MainWindow::on_pushButton_2_clicked()
 {
-    QMessageBox * qmb =new QMessageBox();
-    qmb->setText(tr("main button right"));
-    qmb->show();
+    this->close();
 }
 
 void MainWindow::on_pbtn_E_clicked()
 {
     BodyView * body=new BodyView();
     body->show();
+}
+
+void MainWindow::MouseLeftPress(QMouseEvent * event)
+{
+    dragPosition = event->globalPos() - pos();
+    event->accept();
+}
+
+void MainWindow::MouseleftpressAfterMove(QMouseEvent * event)
+{
+    move(event->globalPos() - dragPosition);//ÒÆ¶¯´°¿Ú
+    event->accept();
+}
+
+void MainWindow::MousedoubleClickMaxWindow(QMouseEvent *)
+{
+    if(this->windowState()!=Qt::WindowMaximized)
+    {
+        this->setWindowState(Qt::WindowMaximized);
+    }
+    else
+    {
+        this->setWindowState(Qt::WindowNoState);
+    }
 }

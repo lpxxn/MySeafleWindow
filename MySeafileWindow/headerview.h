@@ -17,6 +17,18 @@ public:
 
 private:
     Ui::HeaderView *ui;
+signals:
+    void mouseLeftPress(QMouseEvent *);
+    void mouseleftpressAfterMove(QMouseEvent *);
+    void mousedoubleClickMaxWindow(QMouseEvent *);
+    // QWidget interface
+protected:
+    void mousePressEvent(QMouseEvent *);
+    void mouseMoveEvent(QMouseEvent *);
+
+    // QWidget interface
+protected:
+    void mouseDoubleClickEvent(QMouseEvent *);
 };
 
 #endif // HEADERVIEW_H
