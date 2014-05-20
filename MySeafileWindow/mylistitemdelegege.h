@@ -6,17 +6,23 @@
 class MyListItemDelegege : public QStyledItemDelegate
 {
     Q_OBJECT
-public:
-    explicit MyListItemDelegege(QObject *parent = 0);
+
 
 signals:
 
 public slots:
 
 
-    // QAbstractItemDelegate interface
+
 public:
+    explicit MyListItemDelegege(QString strDipslay ,QString strIocPath,QObject *parent = 0);
+
+    // QAbstractItemDelegate interface
     QSize sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const;
+    void paint(QPainter* painter,const QStyleOptionViewItem& option,const QModelIndex& index) const;
+private:
+    QString dispName;
+    QIcon dispICon;
 };
 
 #endif // MYLISTITEMDELEGEGE_H

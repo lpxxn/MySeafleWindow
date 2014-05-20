@@ -89,7 +89,7 @@ BodyView::BodyView(QWidget *parent) :
       list->setModel(data);
       list->setIconSize(QSize(80,80));
 
-      list->setItemDelegate(new MyListItemDelegege());
+      //list->setItemDelegate(new MyListItemDelegege());
       list->setSelectionModel(selections);
       list->setSpacing(5);
       list->setViewMode(QListView::IconMode);

@@ -9,5 +9,13 @@
         <file>uploadHover.png</file>
         <file>close.png</file>
         <file>closehover.png</file>
+        <file>list1.png</file>
+        <file>list2.png</file>
+        <file>list3.png</file>
+        <file>list4.png</file>
+        <file>list5.png</file>
+        <file>list6.png</file>
+        <file>list7.png</file>
+        <file>list8.png</file>
     </qresource>
 </RCC>

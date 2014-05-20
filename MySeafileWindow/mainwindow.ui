@@ -10,6 +10,12 @@
     <height>617</height>
    </rect>
   </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
@@ -218,7 +224,7 @@
            <widget class="QWidget" name="widget_3" native="true">
             <layout class="QHBoxLayout" name="horizontalLayout_5">
              <property name="spacing">
-              <number>1</number>
+              <number>0</number>
              </property>
              <property name="leftMargin">
               <number>0</number>
@@ -233,22 +239,22 @@
               <number>0</number>
              </property>
              <item>
-              <widget class="QWidget" name="wdg_left" native="true">
+              <widget class="LeftDockView" name="wdg_left" native="true">
                <property name="sizePolicy">
-                <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
                  <horstretch>0</horstretch>
                  <verstretch>0</verstretch>
                 </sizepolicy>
                </property>
                <property name="minimumSize">
                 <size>
-                 <width>200</width>
+                 <width>150</width>
                  <height>0</height>
                 </size>
                </property>
                <property name="maximumSize">
                 <size>
-                 <width>16777215</width>
+                 <width>150</width>
                  <height>16777215</height>
                 </size>
                </property>
@@ -256,30 +262,55 @@
                 <bool>false</bool>
                </property>
                <property name="styleSheet">
-                <string notr="true">background-color: rgb(255, 255, 127,255);</string>
+                <string notr="true">background-color: rgb(249, 249, 249);</string>
                </property>
                <layout class="QVBoxLayout" name="verticalLayout">
-                <item>
-                 <widget class="QPushButton" name="pbtn_E">
-                  <property name="autoFillBackground">
-                   <bool>false</bool>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(255, 255, 255, 255), stop:0.448864 rgba(255, 255, 255, 255), stop:1 rgba(255, 177, 177, 255));</string>
-                  </property>
-                  <property name="text">
-                   <string>PushButton</string>
-                  </property>
-                 </widget>
-                </item>
+                <property name="spacing">
+                 <number>0</number>
+                </property>
+                <property name="leftMargin">
+                 <number>0</number>
+                </property>
+                <property name="topMargin">
+                 <number>0</number>
+                </property>
+                <property name="rightMargin">
+                 <number>0</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>0</number>
+                </property>
                </layout>
               </widget>
              </item>
              <item>
               <widget class="BodyView" name="wdg_BodyFolders" native="true">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
                <property name="styleSheet">
                 <string notr="true"/>
                </property>
+               <layout class="QHBoxLayout" name="horizontalLayout">
+                <property name="spacing">
+                 <number>0</number>
+                </property>
+                <property name="leftMargin">
+                 <number>0</number>
+                </property>
+                <property name="topMargin">
+                 <number>0</number>
+                </property>
+                <property name="rightMargin">
+                 <number>0</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>0</number>
+                </property>
+               </layout>
               </widget>
              </item>
             </layout>
@@ -370,6 +401,12 @@
    <class>BodyView</class>
    <extends>QWidget</extends>
    <header>bodyview.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>LeftDockView</class>
+   <extends>QWidget</extends>
+   <header>leftdockview.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

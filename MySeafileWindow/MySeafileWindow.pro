@@ -23,7 +23,8 @@ SOURCES += main.cpp\
     itemmodel.cpp \
     itemobject.cpp \
     mylistitemdelegege.cpp \
-    mylineitemdelegate.cpp
+    mylineitemdelegate.cpp \
+    leftdockview.cpp
 
 HEADERS  += mainwindow.h \
     headerview.h \
@@ -34,14 +35,16 @@ HEADERS  += mainwindow.h \
     itemmodel.h \
     itemobject.h \
     mylistitemdelegege.h \
-    mylineitemdelegate.h
+    mylineitemdelegate.h \
+    leftdockview.h
 
 FORMS    += mainwindow.ui \
     headerview.ui \
     menuview.ui \
     rightdockview.ui \
     bodyview.ui \
-    flodsview.ui
+    flodsview.ui \
+    leftdockview.ui
 
 RESOURCES += \
     Resource.qrc
